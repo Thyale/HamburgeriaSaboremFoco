@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hamburgueria Sabor em Foco</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon cardapio.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Link para o arquivo CSS do SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  </head>
+
+  <body onload="HorarioDeFuncionamento()">
+    <header>
+      <div class="tranparencia"></div>
+      <div>
+        <img src="./img/imagemPrincipalHamburguer.jpg" alt="Imagem de hamburguer">
+        <h1>Sabor em Foco</h1>
+        <p>Rua dev sucesso,13,Recife, PE</p>
+        <p class="HorarioDeFuncionamento">Seg á Dom - 18:00 as 22:00</p>
+      </div>
+    </header>
+
+    <main>
+      <h1>Conheça nosso cardápio</h1>
+      <section class="SectionOpcoesHamburguers">
+        <div class="DivDasopcoes">
+          <div><img src="./img/smash-burger.jpg" alt="hamburguer smash"></div>
+          <div>
+            <h2>hamburguer Smash</h2>
+            <p>Pão levinho de fermentação natural da Trigou burguer 160g. Queijo prato e maionese da casa</p>
+            <div class="DivValorECarrinho">
+              <p><strong>R$ 18,90</strong></p>
+              <button onclick="adicionaraocarrinhoSmash()"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="DivDasopcoes">
+          <div><img src="./img/hamburguer bacon.jpg" alt="hamburguer bacon"></div>
+          <div>
+            <h2>hamburguer Bacon</h2>
+            <p>Pão levinho de fermentação natural da Trigou burguer 160g. Queijo prato e maionese da casa</p>
+            <div class="DivValorECarrinho">
+              <p><strong>R$ 32,90</strong></p>
+              <button onclick="adicionaraocarrinhoBacon()"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="DivDasopcoes">
+          <div><img src="./img/hamburguer salad.jpg" alt="hamburguer salad"></div>
+          <div>
+            <h2>hamburguer Salad</h2>
+            <p>Pão levinho de fermentação natural da Trigou burguer 160g. Queijo prato e maionese da casa</p>
+            <div class="DivValorECarrinho">
+              <p><strong>R$ 25,90</strong></p>
+              <button onclick="adicionaraocarrinhoSalad()"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="DivDasopcoes">
+          <div><img src="./img/hambuguer frango.jpg" alt="hamburguer smash"></div>
+          <div>
+            <h2>hamburguer Chiken</h2>
+            <p>Pão levinho de fermentação natural da Trigou burguer 160g. Queijo prato e maionese da casa</p>
+            <div class="DivValorECarrinho">
+              <p><strong>R$ 34,90</strong></p>
+              <button onclick="adicionaraocarrinhoFrango()"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2>Bebidas</h2>
+      <section class="SectionOpcoesbebidas">
+        <div class="DivDasopcoesbebidas">
+          <div><img src="./img/coca.png" alt="Coca Cola lata"></div>
+          <div>
+            <h2>Cola Cola Lata</h2>
+            <div class="DivValorECarrinho">
+              <p><strong>R$ 6,90</strong></p>
+              <button onclick="adicionaraocarrinhoCoca()"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="DivDasopcoesbebidas">
+          <div><img src="./img/guarana.png" alt="guaraná lata"></div>
+          <div>
+            <h2>Guarana Lata</h2>
+            <div class="DivValorECarrinho">
+              <p><strong>R$ 6,90</strong></p>
+              <button onclick="adicionaraocarrinhoGuarana()"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="carrinho">
+        <h1>Seu carrinho</h1>
+        <div id="Smash" class="DivsCarrinhoOpcoes">
+          <div>
+            <h2>Hamburguer smash</h2>
+            <p class="quantidadeadicionadasmash">Quantidade (0)</p>
+            <p><strong>R$ 18,90</strong></p>
+          </div>
+          <div>
+            <p onclick="removersmash()" class="remover">Remover</p>
+          </div>
+        </div>
+
+        <div id="Bacon" class="DivsCarrinhoOpcoes">
+          <div >
+            <h2>Hamburguer Bacon</h2>
+            <p class="quantidadeadicionadaBacon">Quantidade (0)</p>
+            <p><strong>R$ 32,90</strong></p>
+          </div>
+          <div>
+            <p onclick="removerbacon()" class="remover">Remover</p>
+          </div>
+        </div>
+
+        <div id="Salad" class="DivsCarrinhoOpcoes">
+          <div>
+            <h2>Hamburguer Salad</h2>
+            <p class="quantidadeadicionadaSalad">Quantidade (0)</p>
+            <p><strong>R$ 25,90</strong></p>
+          </div>
+          <div>
+            <p onclick="removersalad()" class="remover">Remover</p>
+          </div>
+        </div>
+
+        <div id="Frango" class="DivsCarrinhoOpcoes">
+          <div>
+            <h2>Hamburguer Chiken</h2>
+            <p class="quantidadeadicionadafrango">Quantidade (0)</p>
+            <p><strong>R$ 34,90</strong></p>
+          </div>
+          <div>
+            <p onclick="removerfrango()" class="remover">Remover</p>
+          </div>
+        </div>
+
+        <div id="coca" class="DivsCarrinhoOpcoes">
+          <div>
+            <h2>Cola Cola Lata</h2>
+            <p class="quantidadeadicionadacoca">Quantidade (0)</p>
+            <p><strong>R$ 6,90</strong></p>
+          </div>
+          <div>
+            <p onclick="removercoca()" class="remover">Remover</p>
+          </div>
+        </div>
+
+        <div id="guarana" class="DivsCarrinhoOpcoes">
+          <div>
+            <h2>Guarana Lata</h2>
+            <p class="quantidadeadicionadaguarana">Quantidade (0)</p>
+            <p><strong>R$ 6,90</strong></p>
+          </div>
+          <div>
+            <p onclick="removerguarana()" class="remover">Remover</p>
+          </div>
+        </div>
+
+        <div class="endereco">
+          <p><strong>Endereço de entrega:</strong></p>
+          <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço completo">
+        </div>
+
+        <div class="finalizarPedido">
+          <p onclick="fechar()" class="finalizarPedidoFECHAR">Fechar</p>
+          <p onclick="finalizar()" class="finalizarPedidoFINALIZAR">Finalizar pedido</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="carrinhosomatorio">(0)</p>
+      <p class="vejaseucarrinho" onclick="Abrir()">Veja seu carrinho <span class="material-symbols-outlined">shopping_cart</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
