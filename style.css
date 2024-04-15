@@ -246,6 +246,35 @@
     display: none;
   }
 
+  /*Main - pagamento*/
+
+  .pagamento{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    z-index: 2;
+    border-radius: 10px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    max-width: 400px;
+    min-width: 230px;
+    display: none;
+  }
+
+  .fecharpagamento{
+    cursor: pointer;
+  }
+
+  .pagamento img{
+    width: 200px;
+  }
+
   /*footer*/
 
   footer{
